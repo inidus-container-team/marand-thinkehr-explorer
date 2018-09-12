@@ -16,7 +16,7 @@ before_deploy:
 - docker tag marand-thinkehr-explorer "${REGISTRY_URL}"/marand-thinkehr-explorer:${EXPLORER_VER}
 deploy:
   provider: script
-  script: docker push "${REGISTRY_URL}"/marand-thinkehr-explorer:${THINKEHR_VER}
+  script: docker push "${REGISTRY_URL}"/marand-thinkehr-explorer:${EXPLORER_VER}
   on:
     branch: master
 notifications:
