@@ -13,13 +13,13 @@ LABEL org.label-schema.vendor="Marand" \
 ENV EHR_EXPLORER4_APPHOME=/explorer
 
 # Think!EHR Explorer
-WORKDIR $EHR_EXPLORER4_APPHOME
+WORKDIR /explorer
 
 # Add war files to tomcat
 COPY ./source/*.war /usr/local/tomcat/webapps/
 
 # Add conf files for apps
-COPY ./conf/explorer/* /conf/
+COPY ./conf/explorer/* /explorer/conf/
 COPY ./conf/ehrscape-manager/ehrscape-manager.properties /usr/local/tomcat/conf/ehrscape-manager.properties
 
 EXPOSE 8080
