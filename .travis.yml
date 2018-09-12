@@ -4,8 +4,8 @@ services:
 env:
 - EXPLORER_VER=v4.7.47
 before_script:
-- wget -q https://$SOURCE_URL/source/marand/files/ehrexplorer-$EXPLORER_VER.zip
-  && unzip ehrexplorer-$EXPLORER_VER.zip -d source && rm ehrexplorer-$EXPLORER_VER.zip
+- wget -q https://$SOURCE_URL/source/marand/files/ehrexplorer-$EXPLORER_VER.zip &&
+  unzip ehrexplorer-$EXPLORER_VER.zip -d source && rm ehrexplorer-$EXPLORER_VER.zip
 script:
 - envsubst < Dockerfile > Dockerfile.$EXPLORER_VER
 - docker build -f Dockerfile.$EXPLORER_VER --tag marand-thinkehr-explorer .
